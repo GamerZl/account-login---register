@@ -1,0 +1,45 @@
+.success-box{
+margin-left: 70vh;
+margin-top: 25vh;
+}
+
+.success-box img{
+    height: 20vh;
+
+
+}
+.headline-username b{
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 3vh;
+    margin-top: 3vh;
+    display: flex;
+    margin-left: -3vh;
+}
+
+.text-account p{
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 2vh;
+    margin-left: -8vh;
+   
+    
+}
+
+.success-box button{
+    background-color: black;
+    color: white;
+    width: 15vh;
+    height: 5vh;
+    border-radius: 10px;
+    margin-left: 2.5vh;
+    margin-top: 5vh;
+    border-style: none;
+}
+
+.success-box button:hover{
+    color: gray;
+}
+
+
+

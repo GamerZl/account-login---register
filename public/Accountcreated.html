@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Created</title>
+    <link rel="stylesheet" href="Act created.css">
+</head>
+<body>
+
+    <div class="success-box">
+        <img src="Pictures/profile pic.png" alt="Profile">
+
+        <div class="headline-username">
+        <p><b>Welcome, <span id="userDisplay"></span></b></p>
+        </div>
+        <div class="text-account">
+        <p>Your account has been created successfully.</p>
+        </div>
+        <button onclick="window.location.href='Homepage.html'">Continue</button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("userDisplay").textContent = params.get("user");
+    </script>
+
+</body>
+</html>

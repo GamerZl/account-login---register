@@ -1,0 +1,43 @@
+
+
+
+.Homepage h1{
+    font-family: sans-serif;
+    font-style: italic;
+    margin-left: 67vh;
+    margin-top: 40vh;
+    font-size: 3vh;
+}
+.hb button{
+     background-color: black;
+    color: white;
+    width: 12vh;
+    height: 4vh;
+    border-radius: 10px;
+    font-size: 1.2vh;
+    font-style: italic;
+    border-style: none;
+    margin-left: 77vh;
+    margin-top: 4vh;
+}
+
+.hb button:hover{
+    color: gray;
+}
+
+.hb2 button{
+     background-color: black;
+    color: white;
+    width: 12vh;
+    height: 4vh;
+    border-radius: 10px;
+    font-size: 1.2vh;
+    font-style: italic;
+    border-style: none;
+    margin-left: 77vh;
+    margin-top: 2vh;
+}
+
+.hb2 button:hover{
+    color: gray;
+}
