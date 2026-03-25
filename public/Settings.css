@@ -3,3 +3,67 @@ body{
     margin: 0;
     background-color: #313131;
 }
+
+.b1 button{
+    margin-top: 10px;
+    margin-left: 5vh;
+    color: white;
+    font-style: italic;
+    background: none;
+    width: 190vh;
+    height: 2vh;
+    border-style: none;
+    font-size: 1.2vh;
+    display: flex;
+ 
+}
+
+.b1{
+ background-color: #515151;
+ height: 3vh;
+display: flex;
+margin-top: 10vh;
+}
+
+.b1 a{
+    text-decoration: none;
+}
+
+.b2 button{
+    margin-left: 5vh;
+    font-size: 1.2;
+    color: white;
+    margin-top: 10px;
+    font-style: italic;
+    background: none;
+    border-style: none;
+    display: flex;
+    width: 190vh;
+    height: 2vh;
+}
+
+.b2{
+    background-color: #515151;
+ height: 3vh;
+display: flex;
+margin-top: 2vh;
+
+}
+
+.b2 a{
+    text-decoration: none;
+}
+
+
+.closeb button{
+    background: none;
+    border-style: none;
+    margin-top: -15vh;
+    display: flex;
+    margin-left: 95%;
+    
+}
+
+.closeb button img{
+    width: 2vh;
+}
