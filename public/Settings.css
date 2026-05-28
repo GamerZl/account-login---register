@@ -25,6 +25,11 @@ display: flex;
 margin-top: 10vh;
 }
 
+.b1:hover{
+background-color: #454545;
+
+}
+
 .b1 a{
     text-decoration: none;
 }
@@ -47,6 +52,11 @@ margin-top: 10vh;
  height: 3vh;
 display: flex;
 margin-top: 2vh;
+
+}
+
+.b2:hover{
+    background-color: #454545;
 
 }
 

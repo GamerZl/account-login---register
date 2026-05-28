@@ -1,44 +1,65 @@
 const express = require("express");
+const mysql = require("mysql2");
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-
-//  THIS LINE IS REQUIRED 
 app.use(express.static("public"));
 
-// Temporary in-memory user storage
-const users = [];
 
-// REGISTER route
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "shafie334",   
+  database: "myapp"
+});
+
+db.connect((err) => {
+  if (err) {
+    console.log("Database connection failed:", err);
+  } else {
+    console.log("Connected to MySQL!");
+  }
+});
+
+
 app.post('/register', (req, res) => {
   const { email, username, password } = req.body;
 
-  const exists = users.find(u => u.username === username);
-  if (exists) {
-    return res.json({ success: false, message: 'Username already taken' });
-  }
+  const sql = "INSERT INTO user (email, username, password) VALUES (?, ?, ?)";
 
-  users.push({ email, username, password });
-  console.log('Users:', users);
+  db.query(sql, [email, username, password], (err, result) => {
+    if (err) {
+      if (err.code === "ER_DUP_ENTRY") {
+        return res.json({ success: false, message: "Username already taken" });
+      }
+      return res.json({ success: false, message: "Database error" });
+    }
 
-  res.json({ success: true, message: 'Registration successful!' });
+    res.json({ success: true, message: "Registration successful!" });
+  });
 });
 
-// LOGIN route
+
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
-  const user = users.find(u => u.username === username && u.password === password);
+  const sql = "SELECT * FROM user WHERE username = ? AND password = ?";
 
-  if (user) {
-    return res.json({ success: true, message: 'Login successful!' });
-  }
+  db.query(sql, [username, password], (err, results) => {
+    if (err) {
+      return res.json({ success: false, message: "Database error" });
+    }
 
-  res.json({ success: false, message: 'Invalid username or password' });
+    if (results.length > 0) {
+      return res.json({ success: true, message: "Login successful!" });
+    }
+
+    res.json({ success: false, message: "Invalid username or password" });
+  });
 });
 
-// Start server
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

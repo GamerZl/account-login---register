@@ -5,7 +5,7 @@ const form = document.getElementById("reg-form");
 // run this when user submits the form
 form.addEventListener("submit", function (e) {
        // stop page from refreshing
-    e.preventDefault(); // ⭐ This line is critical
+    e.preventDefault(); 
 
      // get what user typed
     const email = document.getElementById("email").value;
