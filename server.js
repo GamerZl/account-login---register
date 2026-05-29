@@ -7,12 +7,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "shafie334",   
-  database: "myapp"
-});
+const dbConfig = require("./config");
+const db = mysql.createConnection(dbConfig);
 
 db.connect((err) => {
   if (err) {
